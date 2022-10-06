@@ -22,7 +22,10 @@ export interface MyLabelProps {
    * Permite establecer un color custom
    */
    customFontColor?: string
-
+   /**
+    * Permite elegir el background color de nuestra etiqueta
+    */
+    backgroundColor: string
 }
 
 export const MyLabel = ({
@@ -31,12 +34,14 @@ export const MyLabel = ({
   color = 'primary',
   allCaps = false,
   customFontColor,
+  backgroundColor = 'transparent'
 }: MyLabelProps) => {
   return (
     <span 
     className={`label ${size} text-${color}`}
     style={{
-      color: customFontColor
+      color: customFontColor,
+      backgroundColor
     }}
     >
       {
